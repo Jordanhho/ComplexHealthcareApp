@@ -46,11 +46,11 @@ $(document).ready(function() {
   }
   
   recognition.onnomatch = function(event) {
-    diagnostic.textContent = "I didn't recognise that color.";
+   // diagnostic.textContent = "I didn't recognise that color.";
   }
   
   recognition.onerror = function(event) {
-    diagnostic.textContent = 'Error occurred in recognition: ' + event.error;
+    //diagnostic.textContent = 'Error occurred in recognition: ' + event.error;
   }
   
     
@@ -193,7 +193,7 @@ $(document).ready(function() {
         "Diabetes Awareness Clinic<ul><li>Blood Glucose Test</li><li>A1C Blucose Test</li><li>Blood Pressure &amp; Pulse</li><li>Foot Assessment</li></ul>"
         },
         {"mental health": 
-        "Treatment Programs"
+        "Treatment Programs<ul><li><a href='https://www.cbi.ca/services/mental-health' target='_blank' >CBI Mental Health Repository</a></li></ul>"
       }
     ]
   }
@@ -210,15 +210,15 @@ $(document).ready(function() {
 
    $("#send_msg").on("click", function() {
 
-    //clear msg
-    final_span.innerHTML = '';
+      //final_span.innerHTML = '';
     
      //add user chat
       addChat("user_chat_template");
-
+      
       setTimeout(function() {
         //add bot chat
         addChat("bot_chat_template");
+        $("#final_span").val("");
       }, 1000);
    });
 
@@ -247,7 +247,7 @@ $(document).ready(function() {
       new_chat_box.attr("id", new_chat_box_id);
 
       //curr textarea value:
-      var curr_msg = $.trim($("#final_span").val());
+      var curr_msg = $.trim($("#final_span").val()).toLowerCase();
 
       //set chat value depending on user or bot
       if(type_id == "user_chat_template") {
@@ -275,10 +275,14 @@ $(document).ready(function() {
               // else if() {
                 
               // }
-
-              if(curr_msg.includes(bot_key.toLowerCase())) {
+              console.log(curr_msg)
+              if(curr_msg.includes(bot_key)) {
                 bot_msg = bot_msg_val[bot_key];
                 return false;
+              }
+              
+              if(bot_msg == "") {
+                bot_msg = "Could you repeat your question?";
               }
             });
           
@@ -291,7 +295,7 @@ $(document).ready(function() {
       chat_msg_index++;
 
       //empty out prevous chat
-      final_span.innerHTML = '';
+      //final_span.innerHTML = '';
    }
 
 });

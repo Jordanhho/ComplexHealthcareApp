@@ -56,48 +56,53 @@
         </div>
       
 
-        <div id="bot_chat_template" class="display_none">
-            <div class="container">
+        <div id="bot_chat_template" class="display_none" style="padding-bottom: 15px;">
+            <div class="container container_size">
                 <img src="./img/bot_avatar.png" alt="Avatar">
-                <p class="msg msg_text_size pull-left"></p>
+                <strong><p class="msg msg_text_size pull-left"></p></strong>
                 <span class="timestamp"></span>
             </div>
         </div>
         
-        <div id="user_chat_template" class="display_none">
-            <div class="container">
+        <div id="user_chat_template" class="display_none" style="padding-bottom: 15px;">
+            <div class="container container_size">
                 <img src="./img/user_avatar.png" alt="Avatar" class="right">
-                <span class="msg msg_text_size pull-right"></span>
+                <strong><span class="msg msg_text_size pull-right"></span></strong>
                 <span class="timestamp"></span>
             </div>
         </div>
         
-        <div class="w3-content" style="padding:30px;border:3px solid #f1f1f1">
-            <div class="row">
-                <div class="col-3">
-                </div>
-                <div class="col-6">
-                    <div id="chat_log">
+    
+        <div class="row" >
+            <div class="col-4">
+            </div>
+            <div class="col-4">
+                <div class="w3-content" style="padding:30px;border:3px solid #f1f1f1">
+                    <div id="chat_log" style="left: 520px !important;">
 
                     </div>
                 </div>
-                <div class="col-3">
-                </div>
             </div>
-                    
-        </div>
+            <div class="col-4">
+            </div>
+        </div>     
+  
 
   
         <div class="center">
-            <div>
-                <textarea id="final_span" class="final chat_bar"></textarea>
-                <button id="start_button">
-                    <a id="start_img" alt="Start" class="fa fa-microphone fa-lg  icon" style="pointer-events: auto;"></a>
-                </button>
-                <button id="send_msg" type="button" class="btn btn-info">
-                    <span class="glyphicon glyphicon-send" aria-hidden="true"></span>
-                </button>
+            <div class="row" >
+                <div class="col-12">
+                    <textarea id="final_span" class="final chat_bar" style="padding-top: 20px !important;"></textarea>
+                    <button id="start_button">
+                        <!-- <img src="./img/mic.png" class="mic_size"> -->
+                        <a id="start_img" alt="Start" class="fa fa-microphone fa-2x  icon" style="pointer-events: auto;"></a>
+                    </button>
+                    <button id="send_msg" type="button" class="btn btn-info">
+                        <span class="glyphicon glyphicon-send" aria-hidden="true"></span>
+                    </button>
+                </div>
             </div>
+
         </div>
 
 
