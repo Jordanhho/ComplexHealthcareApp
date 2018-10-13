@@ -30,35 +30,36 @@
 <body>
 
 
-    <div class="center">
+    <div>
 
+        <div class="center">
+            <h1>Health Nav&nbsp;<span class="glyphicon glyphicon-plus"></span></h1>
 
-        <h1>Health Nav&nbsp;<span class="glyphicon glyphicon-plus"></span></h1>
-
-        <div id="info" style="height: 30px;">
-            <p id="info_start">Click on the microphone icon and begin speaking.</p>
-            <p id="info_speak_now">Speak now.</p>
-            <p id="info_no_speech">No speech was detected. You may need to adjust your
-                <a href="//support.google.com/chrome/bin/answer.py?hl=en&amp;answer=1407892">
-                microphone settings</a>.</p>
-            <p id="info_no_microphone" style="display:none">
-                No microphone was found. Ensure that a microphone is installed and that
-                <a href="//support.google.com/chrome/bin/answer.py?hl=en&amp;answer=1407892">
-                microphone settings</a> are configured correctly.</p>
-            <p id="info_allow">Click the "Allow" button above to enable your microphone.</p>
-            <p id="info_denied">Permission to use microphone was denied.</p>
-            <p id="info_blocked">Permission to use microphone is blocked. To change,
-                go to chrome://settings/contentExceptions#media-stream</p>
-            <p id="info_upgrade">Web Speech API is not supported by this browser.
-                Upgrade to <a href="//www.google.com/chrome">Chrome</a>
-                version 25 or later.</p>
+            <div id="info" style="height: 30px;">
+                <p id="info_start">Click on the microphone icon and begin speaking.</p>
+                <p id="info_speak_now">Speak now.</p>
+                <p id="info_no_speech">No speech was detected. You may need to adjust your
+                    <a href="//support.google.com/chrome/bin/answer.py?hl=en&amp;answer=1407892">
+                    microphone settings</a>.</p>
+                <p id="info_no_microphone" style="display:none">
+                    No microphone was found. Ensure that a microphone is installed and that
+                    <a href="//support.google.com/chrome/bin/answer.py?hl=en&amp;answer=1407892">
+                    microphone settings</a> are configured correctly.</p>
+                <p id="info_allow">Click the "Allow" button above to enable your microphone.</p>
+                <p id="info_denied">Permission to use microphone was denied.</p>
+                <p id="info_blocked">Permission to use microphone is blocked. To change,
+                    go to chrome://settings/contentExceptions#media-stream</p>
+                <p id="info_upgrade">Web Speech API is not supported by this browser.
+                    Upgrade to <a href="//www.google.com/chrome">Chrome</a>
+                    version 25 or later.</p>
+            </div>
         </div>
       
 
         <div id="bot_chat_template" class="display_none">
             <div class="container">
                 <img src="./img/bot_avatar.png" alt="Avatar">
-                <span class="msg msg_text_size pull-left"></span>
+                <p class="msg msg_text_size pull-left"></p>
                 <span class="timestamp"></span>
             </div>
         </div>
@@ -72,23 +73,31 @@
         </div>
         
         <div class="w3-content" style="padding:30px;border:3px solid #f1f1f1">
-            
-            <div id="chat_log" class="center-me">
+            <div class="row">
+                <div class="col-3">
+                </div>
+                <div class="col-6">
+                    <div id="chat_log">
 
+                    </div>
+                </div>
+                <div class="col-3">
+                </div>
             </div>
-                
+                    
         </div>
 
   
-
-        <div>
-            <textarea id="final_span" class="final chat_bar"></textarea>
-            <button id="start_button">
-                <a id="start_img" alt="Start" class="fa fa-microphone fa-lg  icon" style="pointer-events: auto;"></a>
-            </button>
-            <button id="send_msg" type="button" class="btn btn-info">
-                <span class="glyphicon glyphicon-send" aria-hidden="true"></span>
-            </button>
+        <div class="center">
+            <div>
+                <textarea id="final_span" class="final chat_bar"></textarea>
+                <button id="start_button">
+                    <a id="start_img" alt="Start" class="fa fa-microphone fa-lg  icon" style="pointer-events: auto;"></a>
+                </button>
+                <button id="send_msg" type="button" class="btn btn-info">
+                    <span class="glyphicon glyphicon-send" aria-hidden="true"></span>
+                </button>
+            </div>
         </div>
 
 

@@ -186,9 +186,15 @@ $(document).ready(function() {
 
    var chat_bot_msges = {
     "chat_bot":[
-        {"hello": "Hello X person msg"}, 
-        {"diabetes": "diabetes msg"},
-        {"mental health": "mental health msg template"}
+        {"hello": 
+          "<strong>Hi there, what can I help you with?</strong>"
+        }, 
+        {"diabetes": 
+        "Diabetes Awareness Clinic<ul><li>Blood Glucose Test</li><li>A1C Blucose Test</li><li>Blood Pressure &amp; Pulse</li><li>Foot Assessment</li></ul>"
+        },
+        {"mental health": 
+        "Treatment Programs"
+      }
     ]
   }
 
@@ -261,6 +267,15 @@ $(document).ready(function() {
             //loop through all bot msg types
             $.each(chat_bot_msges.chat_bot, function(bot_msg_i, bot_msg_val) {
               var bot_key = Object.keys(bot_msg_val)[0];
+
+              // if(curr_msg.includes(""))) {
+              //   bot_msg = bot_msg_val[bot_key];
+              //   return false;
+              // }
+              // else if() {
+                
+              // }
+
               if(curr_msg.includes(bot_key.toLowerCase())) {
                 bot_msg = bot_msg_val[bot_key];
                 return false;
@@ -268,7 +283,7 @@ $(document).ready(function() {
             });
           
         }
-        new_chat_box.find(".msg").text(bot_msg);
+        new_chat_box.find(".msg").html(bot_msg);
       }
       
       new_chat_box.appendTo(chat_log).show("slow");
