@@ -27,15 +27,48 @@
 </head>
 
 
-
 <body>
 
-    <h1>The hacking health project</h1>
+    <div id="bot_chat_template" >
+        <div class="container">
+            <img src="/img/bot_avatar.png" alt="Avatar">
+            <p><span class="msg">Hello. How are you today?</span></p>
+            <span class="timestamp"></span>
+        </div>
+    </div>
+
+    <div id="user_chat_template" >
+        <div class="container">
+            <img src="/img/user_avatar.png" alt="Avatar" class="right >
+            <p><span class="msg">Hello. How are you today?</span></p>
+            <span class="timestamp"></span>
+        </div>
+    </div>
+
+
+
+    <div class="container">
+        <div class="container">
+            <img src="./img/user_avatar.png" alt="Avatar">
+            <p><span class="msg">Hello. How are you today?</span></p>
+            <span class="timestamp">11:00</span>
+        </div>
+      </div>
+      
+      <div class="container darker">
+        <div class="image-cropper">
+            <img src="./img/bot_avatar.png" alt="Avatar" class="right rounded">
+        </div>
+        <p><span class="msg">Hello. How are you today?</span></p>
+        <span class="timestamp">11:00</span>
+      </div>
+      
+
 
     <div class="center" id="headline">
 
         <a href="http://dvcs.w3.org/hg/speech-api/raw-file/tip/speechapi.html">
-            Web Speech API
+            Health Nav&nbsp;<span class="glyphicon glyphicon-plus"></span>
         </a>
 
         <div id="info">
@@ -58,13 +91,8 @@
         </div>
 
         <div class="right">
-
-            
-
             <button id="start_button">
-                <!-- <a id="start_img" alt="Start" class="fa fa-microphone fa-lg  icon" style="pointer-events: auto;"></a> -->
-                <span id="start_img" alt="Start" class="glyphicon glyphicon-search" aria-hidden="true">
-               <!--  <img id="start_img" src="mic.gif" alt="Start"> -->
+                <a id="start_img" alt="Start" class="fa fa-microphone fa-lg  icon" style="pointer-events: auto;"></a>
             </button>
         </div>
 

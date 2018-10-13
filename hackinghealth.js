@@ -1,10 +1,6 @@
 
 
 $(document).ready(function() {
-    $("#testBtn").on("click", function() {
-        alert("you clicked me");
-    });
-
 
 
     $("#start_button").on("click", function(event) {
@@ -13,7 +9,6 @@ $(document).ready(function() {
 
     /** google web speech api  */
     var langs = ['English', ['en-CA', 'Canada']];
-    var create_email = false;
     var final_transcript = '';
     var recognizing = false;
     var ignore_onend;
@@ -72,10 +67,6 @@ $(document).ready(function() {
          range.selectNode(document.getElementById('final_span'));
          window.getSelection().addRange(range);
        }
-    //    if (create_email) {
-    //      create_email = false;
-    //      createEmail();
-    //    }
      };
    
      recognition.onresult = function(event) {
@@ -90,9 +81,6 @@ $(document).ready(function() {
        final_transcript = capitalize(final_transcript);
        final_span.innerHTML = linebreak(final_transcript);
        interim_span.innerHTML = linebreak(interim_transcript);
-    //    if (final_transcript || interim_transcript) {
-    //     //  showButtons('inline-block');
-    //    }
      };
    }
    
@@ -112,38 +100,6 @@ $(document).ready(function() {
      return s.replace(first_char, function(m) { return m.toUpperCase(); });
    }
    
-//    function createEmail() {
-//      var n = final_transcript.indexOf('\n');
-//      if (n < 0 || n >= 80) {
-//        n = 40 + final_transcript.substring(40).indexOf(' ');
-//      }
-//      var subject = encodeURI(final_transcript.substring(0, n));
-//      var body = encodeURI(final_transcript.substring(n + 1));
-//      window.location.href = 'mailto:?subject=' + subject + '&body=' + body;
-//    }
-   
-//    function copyButton() {
-//      if (recognizing) {
-//        recognizing = false;
-//        recognition.stop();
-//      }
-//      copy_button.style.display = 'none';
-//      copy_info.style.display = 'inline-block';
-//      showInfo('');
-//    }
-   
-//    function emailButton() {
-//      if (recognizing) {
-//        create_email = true;
-//        recognizing = false;
-//        recognition.stop();
-//      } else {
-//        createEmail();
-//      }
-//      email_button.style.display = 'none';
-//      email_info.style.display = 'inline-block';
-//      showInfo('');
-//    }
    
    function startButton(event) {
         if (recognizing) {
@@ -156,7 +112,6 @@ $(document).ready(function() {
         ignore_onend = false;
         final_span.innerHTML = '';
         interim_span.innerHTML = '';
-        start_img.src = 'mic-slash.gif';
         showInfo('info_allow');
         // showButtons('none');
         start_timestamp = event.timeStamp;
@@ -174,18 +129,12 @@ $(document).ready(function() {
        info.style.visibility = 'hidden';
      }
    }
-   
-//    var current_style;
-//    function showButtons(style) {
-//      if (style == current_style) {
-//        return;
-//      }
-//      current_style = style;
-//      copy_button.style.display = style;
-//      email_button.style.display = style;
-//      copy_info.style.display = 'none';
-//      email_info.style.display = 'none';
-//    }
 
+
+
+
+
+
+   
 });
 
