@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!-- javascript health hack -->
+    <script src="hackinghealth.js"></script>
+
+    <!-- css health hack -->
+    <link rel="stylesheet" href="hackinghealth.css">
+
+   <!--  font awesome -->
+   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+</head>
+
+
+
+<body>
+
+    <h1>The hacking health project</h1>
+
+    <div class="center" id="headline">
+
+        <a href="http://dvcs.w3.org/hg/speech-api/raw-file/tip/speechapi.html">
+            Web Speech API
+        </a>
+
+        <div id="info">
+            <p id="info_start">Click on the microphone icon and begin speaking.</p>
+            <p id="info_speak_now">Speak now.</p>
+            <p id="info_no_speech">No speech was detected. You may need to adjust your
+                <a href="//support.google.com/chrome/bin/answer.py?hl=en&amp;answer=1407892">
+                microphone settings</a>.</p>
+            <p id="info_no_microphone" style="display:none">
+                No microphone was found. Ensure that a microphone is installed and that
+                <a href="//support.google.com/chrome/bin/answer.py?hl=en&amp;answer=1407892">
+                microphone settings</a> are configured correctly.</p>
+            <p id="info_allow">Click the "Allow" button above to enable your microphone.</p>
+            <p id="info_denied">Permission to use microphone was denied.</p>
+            <p id="info_blocked">Permission to use microphone is blocked. To change,
+                go to chrome://settings/contentExceptions#media-stream</p>
+            <p id="info_upgrade">Web Speech API is not supported by this browser.
+                Upgrade to <a href="//www.google.com/chrome">Chrome</a>
+                version 25 or later.</p>
+        </div>
+
+        <div class="right">
+
+            
+
+            <button id="start_button">
+                <!-- <a id="start_img" alt="Start" class="fa fa-microphone fa-lg  icon" style="pointer-events: auto;"></a> -->
+                <span id="start_img" alt="Start" class="glyphicon glyphicon-search" aria-hidden="true">
+               <!--  <img id="start_img" src="mic.gif" alt="Start"> -->
+            </button>
+        </div>
+
+        <div id="results">
+            <span id="final_span" class="final"></span>
+            <span id="interim_span" class="interim"></span>
+        </div>
+
+    </div>
+    
+
+     <!-- <button id="testBtn" type="button" class="btn btn-info">Btn<span class="glyphicon glyphicon-search" aria-hidden="true"></span></button> -->
+
+</body>
+</html>
