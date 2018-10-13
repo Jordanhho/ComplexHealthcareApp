@@ -30,13 +30,12 @@
 <body>
 
 
-    <div class="center" id="headline">
+    <div class="center">
 
-        <a href="http://dvcs.w3.org/hg/speech-api/raw-file/tip/speechapi.html">
-            Health Nav&nbsp;<span class="glyphicon glyphicon-plus"></span>
-        </a>
 
-        <div id="info">
+        <h1>Health Nav&nbsp;<span class="glyphicon glyphicon-plus"></span></h1>
+
+        <div id="info" style="height: 30px;">
             <p id="info_start">Click on the microphone icon and begin speaking.</p>
             <p id="info_speak_now">Speak now.</p>
             <p id="info_no_speech">No speech was detected. You may need to adjust your
@@ -54,6 +53,7 @@
                 Upgrade to <a href="//www.google.com/chrome">Chrome</a>
                 version 25 or later.</p>
         </div>
+      
 
         <div id="bot_chat_template" class="display_none">
             <div class="container">
@@ -71,18 +71,24 @@
             </div>
         </div>
         
+        <div class="w3-content" style="padding:30px;border:3px solid #f1f1f1">
+            
+            <div id="chat_log" class="center-me">
 
-        <div id="chat_log">
-
+            </div>
+                
         </div>
-        
+
+  
 
         <div>
             <textarea id="final_span" class="final chat_bar"></textarea>
             <button id="start_button">
                 <a id="start_img" alt="Start" class="fa fa-microphone fa-lg  icon" style="pointer-events: auto;"></a>
             </button>
-            <button id="send_msg" type="button" class="btn btn-info"><span class="glyphicon glyphicon-send" aria-hidden="true"></span></button>
+            <button id="send_msg" type="button" class="btn btn-info">
+                <span class="glyphicon glyphicon-send" aria-hidden="true"></span>
+            </button>
         </div>
 
     </div>
