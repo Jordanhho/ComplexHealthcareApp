@@ -159,7 +159,7 @@ $(document).ready(function() {
       setTimeout(function() {
         //add bot chat
         addChat("bot_chat_template");
-      }, 200);
+      }, 1000);
    });
 
 
