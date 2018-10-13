@@ -29,41 +29,6 @@
 
 <body>
 
-    <div id="bot_chat_template" >
-        <div class="container">
-            <img src="/img/bot_avatar.png" alt="Avatar">
-            <p><span class="msg">Hello. How are you today?</span></p>
-            <span class="timestamp"></span>
-        </div>
-    </div>
-
-    <div id="user_chat_template" >
-        <div class="container">
-            <img src="/img/user_avatar.png" alt="Avatar" class="right >
-            <p><span class="msg">Hello. How are you today?</span></p>
-            <span class="timestamp"></span>
-        </div>
-    </div>
-
-
-
-    <div class="container">
-        <div class="container">
-            <img src="./img/user_avatar.png" alt="Avatar">
-            <p><span class="msg">Hello. How are you today?</span></p>
-            <span class="timestamp">11:00</span>
-        </div>
-      </div>
-      
-      <div class="container darker">
-        <div class="image-cropper">
-            <img src="./img/bot_avatar.png" alt="Avatar" class="right rounded">
-        </div>
-        <p><span class="msg">Hello. How are you today?</span></p>
-        <span class="timestamp">11:00</span>
-      </div>
-      
-
 
     <div class="center" id="headline">
 
@@ -90,15 +55,34 @@
                 version 25 or later.</p>
         </div>
 
-        <div class="right">
+        <div id="bot_chat_template" class="display_none">
+            <div class="container">
+                <img src="./img/bot_avatar.png" alt="Avatar">
+                <span class="msg msg_text_size pull-left"></span>
+                <span class="timestamp"></span>
+            </div>
+        </div>
+        
+        <div id="user_chat_template" class="display_none">
+            <div class="container">
+                <img src="./img/user_avatar.png" alt="Avatar" class="right">
+                <span class="msg msg_text_size pull-right"></span>
+                <span class="timestamp"></span>
+            </div>
+        </div>
+        
+
+        <div id="chat_log">
+
+        </div>
+        
+
+        <div>
+            <textarea id="final_span" class="final chat_bar"></textarea>
             <button id="start_button">
                 <a id="start_img" alt="Start" class="fa fa-microphone fa-lg  icon" style="pointer-events: auto;"></a>
             </button>
-        </div>
-
-        <div id="results">
-            <span id="final_span" class="final"></span>
-            <span id="interim_span" class="interim"></span>
+            <button id="send_msg" type="button" class="btn btn-info"><span class="glyphicon glyphicon-send" aria-hidden="true"></span></button>
         </div>
 
     </div>

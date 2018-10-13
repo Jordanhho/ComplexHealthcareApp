@@ -2,6 +2,7 @@
 
 $(document).ready(function() {
 
+    
 
     $("#start_button").on("click", function(event) {
         startButton(event);
@@ -26,17 +27,14 @@ $(document).ready(function() {
      recognition.onstart = function() {
        recognizing = true;
        showInfo('info_speak_now');
-       start_img.src = 'mic-animate.gif';
      };
    
      recognition.onerror = function(event) {
        if (event.error == 'no-speech') {
-         start_img.src = 'mic.gif';
          showInfo('info_no_speech');
          ignore_onend = true;
        }
        if (event.error == 'audio-capture') {
-         start_img.src = 'mic.gif';
          showInfo('info_no_microphone');
          ignore_onend = true;
        }
@@ -55,7 +53,6 @@ $(document).ready(function() {
        if (ignore_onend) {
          return;
        }
-       start_img.src = 'mic.gif';
        if (!final_transcript) {
          showInfo('info_start');
          return;
@@ -80,7 +77,8 @@ $(document).ready(function() {
        }
        final_transcript = capitalize(final_transcript);
        final_span.innerHTML = linebreak(final_transcript);
-       interim_span.innerHTML = linebreak(interim_transcript);
+       final_span.innerHTML = linebreak(interim_transcript);
+       //interim_span.innerHTML = linebreak(interim_transcript);
      };
    }
    
@@ -103,16 +101,17 @@ $(document).ready(function() {
    
    function startButton(event) {
         if (recognizing) {
-        recognition.stop();
+          recognition.stop();
+          console.log("stopped");
         return;
         }
-        final_transcript = '';
+        //final_transcript = '';
         // recognition.lang = select_dialect.value;
         recognition.start();
-        ignore_onend = false;
-        final_span.innerHTML = '';
-        interim_span.innerHTML = '';
-        showInfo('info_allow');
+        //ignore_onend = false;
+        //final_span.innerHTML = '';
+        // interim_span.innerHTML = '';
+        //showInfo('info_allow');
         // showButtons('none');
         start_timestamp = event.timeStamp;
     }
@@ -131,10 +130,100 @@ $(document).ready(function() {
    }
 
 
+   /* own code */
 
 
+   var chat_bot_msges = {
+    "chat_bot":[
+        {"hello": "Hello X person msg"}, 
+        {"diabetes": "diabetes msg"},
+        {"mental health": "mental health msg template"}
+    ]
+  }
+
+   var chat_msg_index = 0;
+   var bot_init = 0;
+
+
+
+   //init chat
+   addChat("bot_chat_template");
+
+   //hello, diabites, mental health test examples
+
+   $("#send_msg").on("click", function() {
+
+     //add user chat
+      addChat("user_chat_template");
+
+      setTimeout(function() {
+        //add bot chat
+        addChat("bot_chat_template");
+      }, 200);
+   });
 
 
    
+   function findKeywordFromStr(msg) {
+    //if keyword matches mental health
+
+    //if keyword matches diabetes
+
+    //if it matches hello/hi
+   }
+
+
+
+  //bot_chat_template_
+   function addChat(type_id) {
+
+      //curr chat log
+      var chat_log = $("#chat_log");
+
+      var new_chat_box_id = "#" + type_id + "_" + chat_msg_index;
+
+      var new_chat_box = $('#' + type_id ).clone();
+
+      new_chat_box.attr("id", new_chat_box_id);
+
+      //curr textarea value:
+      var curr_msg = $.trim($("#final_span").val());
+
+      //set chat value depending on user or bot
+      if(type_id == "user_chat_template") {
+
+        new_chat_box.find(".msg").text(curr_msg);
+      }
+      else {
+        var bot_msg = "";
+        //if init
+        if(bot_init == 0) {
+          bot_msg = chat_bot_msges.chat_bot[0]["hello"];
+          bot_init = 1;
+        }
+        //search in key words for the text
+        else {
+
+            //loop through all bot msg types
+            $.each(chat_bot_msges.chat_bot, function(bot_msg_i, bot_msg_val) {
+              var bot_key = Object.keys(bot_msg_val)[0];
+              if(curr_msg.includes(bot_key.toLowerCase())) {
+                bot_msg = bot_msg_val[bot_key];
+                return false;
+              }
+            });
+          
+        }
+        new_chat_box.find(".msg").text(bot_msg);
+      }
+      
+      new_chat_box.appendTo(chat_log).show("slow");
+
+      chat_msg_index++;
+
+      //empty out prevous chat
+      final_span.innerHTML = '';
+   }
+
 });
 
